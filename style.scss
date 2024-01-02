@@ -1,0 +1,373 @@
+$primario: #e8505b;
+$secundario: #455a64;
+$negro: #000;
+$blanco: #ffffff;
+$grisClaro: #eceeef;
+$titulo: 34px;
+$subtitulo: 24px;
+$texto: 16px;
+
+@mixin paddingCostados(){
+    width: 100%;
+    padding: 20px 200px 20px 200px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto';
+    h2{
+        font-size: $titulo;
+        text-align: center;
+    }
+    p{
+        font-size: $texto;
+    }
+}
+
+body{
+    margin: 8px;
+}
+
+.page__header,
+.page__main,
+.page__footer {
+    
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+.page__header {
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    // padding: 20px 200px 20px 140px;
+    margin-right: 1;
+    margin-top: 30px;
+    @include paddingCostados();
+
+    .nav {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 2rem;
+
+    }
+
+    .nav__link {
+        text-decoration: none;
+        color: black;
+        font-weight: 700;
+
+    }
+
+    .nav__link-registrar {
+        background-color: $primario;
+        color: $blanco;
+        padding: 10px;
+        padding-left: 30px;
+        padding-right: 30px;
+        border-radius: 7px;
+    }
+}
+
+
+.page__main {
+
+    .main__formulario {
+        width: 100%;
+        @include paddingCostados();
+        
+
+    }
+
+    .formulario__container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 40px
+    }
+
+
+    .formulario {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .formulario__datos {
+        display: grid;
+        background-color: $primario;
+        color: $blanco;
+        padding: 50px;
+
+        h2 {
+            text-align: center;
+            font-size: $titulo;
+            padding: 45px 0px 60px 0px;
+        }
+
+        label{
+            padding-bottom: 1rem;
+            padding-top: 1rem;
+        }
+
+        input{
+            padding: 15px;
+        }
+
+        .submit{
+            background-color: $secundario;
+            color: $blanco;
+            padding: 15px;
+            padding-left: 30px;
+            padding-right: 30px;
+            border-radius: 7px;
+            font-size: $texto;
+        }
+
+    }
+
+    .formulario__imagen {
+        display: flex;
+        flex-direction: column-reverse;
+
+    }
+
+
+    .wave{
+        margin-top: 50px;
+        margin-bottom: -10px;
+    }
+
+    .main__pasos{
+
+        background-color: $primario;
+
+        h2, p{
+            text-align: center;
+            text-align: center;
+            color: $blanco;
+        }
+
+        .pasos{
+            display: flex;
+            justify-content: center;
+        }
+
+        img{
+            width: 400px;
+            display: block;
+        }
+    }
+
+    .main__testimoniales{
+
+        padding-top: 30px;
+
+        h2{
+            text-align: center;
+        }
+
+        .testimonio__header{
+            display: flex;
+            padding: 20px;
+            color: $blanco;
+            font-weight: 700;
+
+            .testimonio_imagen > img{
+                display: flex;
+                height: 100px;
+                width: 100px;
+                border-radius: 50px
+            }
+
+            .testimonio__informacion{
+             margin: 20px 0px 0 20px;
+            }
+        }
+
+        .testimonio__texto{
+            color: $blanco;
+            padding-right: 30px;
+            padding-left: 4rem;
+            margin-bottom: 2cap;
+
+            p{
+                font-size: $texto;
+                line-height: 30px;
+            }
+        }
+
+        .container__testimonios{
+            @include paddingCostados;
+            padding-bottom: 60px;
+        }
+
+        .testimonio{
+            background-color: $secundario;
+            border-radius: 1rem;
+        }
+
+        .testimonios{
+            display: grid;
+            grid-gap: 10px;
+            grid-template-columns: 2fr  2fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+        }
+
+        .testimonio__1{
+            grid-column: 1/4;
+            grid-row: 1/2;
+        }
+
+        .testimonio__2{
+            grid-column: 4/5;
+            grid-row: 1/2;
+        }
+
+        .testimonio__3{
+            grid-column: 5/5;
+            grid-row: 1/3;
+        }
+
+        .testimonio__4{
+            grid-column: 1/3;
+            grid-row: 2/3;
+
+        }
+        .testimonio__5{
+            grid-column: 3/5;
+            grid-row: 2/3;
+        }
+    }
+
+.main__favoritos{
+    background-color: $grisClaro;
+    h2 {
+        text-align: center;
+        font-size: $titulo;
+        padding: 45px 0px 20px 0px;
+        color: #455a64
+    }
+        .container__favoritos{
+            @include paddingCostados;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            grid-gap: 1rem;
+
+                .favorito{
+                    display: grid;
+                    grid-template-columns:  1fr 4fr;
+                    background-color: #ffffff;
+                    padding:3rem;
+                    box-shadow: 0px 0px 2.6rem -0.8rem #99a4a9;
+                    border-radius: 1rem;
+                    // justify-content: space-between;
+                    grid-gap: 2rem;
+
+                    .favorito__imagen{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        width: 150px;
+                    }
+
+                    .favorito__content{
+                        h3{
+                            color: $primario;
+                            font-weight: 700;
+                            font-size: $subtitulo;
+                            padding-bottom: 10px;
+                        }
+                        p{
+                            line-height: 24px;
+                            color: #455a64;
+                        }
+                    }
+                }
+        }
+    }
+
+    .main__repartidor{
+
+        h2{
+            color: #455a64;
+            padding-top: 30px;
+            padding-bottom: 10px;
+
+        }
+
+        .container__repartidor{
+            @include paddingCostados;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 4rem;
+
+            .repartidor__imagen img{
+                width: 100%;
+            }
+
+            .repartidor__texto{
+                font-size: 20px;
+                line-height: 33px;
+                color: $secundario;
+                padding-bottom: 30px;
+                
+                .nav__link-informacion{
+                    
+                    background-color: $primario;
+                    color: $blanco;
+                    padding: 10px;
+                    padding-left: 30px;
+                    padding-right: 30px;
+                    border-radius: 7px;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+.page__footer {
+    background-color: $secundario;
+    color: $blanco;
+
+    h3{
+        font-size: $titulo;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    p{
+        line-height: 2rem;
+        font-size: $texto;
+    }
+
+    .container__footer{
+        @include paddingCostados;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 10px;
+
+        li{
+            text-decoration: none;
+            list-style: none;
+        }
+        
+        a{
+            text-decoration: none;
+            color: $blanco;
+            line-height: 33px;
+        }
+    }
+
+    .footer__derechos{
+        text-align: center;
+        background-color: $primario;
+        padding: 15px;
+    }
+
+}
+
